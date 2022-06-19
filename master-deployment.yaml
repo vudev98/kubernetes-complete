@@ -3,15 +3,16 @@ kind: Service
 metadata:
   name: backend
 spec:
-  selector:
+  selector: 
     app: second-app
-    tier: backend
   ports:
     - protocol: 'TCP'
       port: 80
       targetPort: 8080
+    # - protocol: 'TCP'
+    #   port: 443
+    #   targetPort: 443
   type: LoadBalancer
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -24,11 +25,13 @@ spec:
       app: second-app
       tier: backend
   template:
-    metadata:
+    metadata: 
       labels:
         app: second-app
         tier: backend
-    spec:
+    spec: 
       containers:
         - name: second-node
-          image: nnvu187/kub-first-app:2
+          image: academind/kub-first-app:2
+        # - name: ...
+        #   image: ...

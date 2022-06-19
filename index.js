@@ -7,7 +7,8 @@ const port = 3000;
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-	res.send(`<h1> Hello from node App </h1>`);
+	res.send(`<h1> Hello from node App </h1>
+    <p>Try Sending request to /error and see what happen</p>`);
 });
 
 app.get('/error', (req, res) => {
